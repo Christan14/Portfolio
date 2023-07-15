@@ -1,18 +1,21 @@
-console.log("connecté");
-
-const links = document.querySelectorAll("nav a");
 
 
-const btn =document.createElement("nav-toggle");
- 
-btn.addEventListener("click", () => {
-    nav.classList.toggle("active");
-    console.log(btn)
-});
+function toggleMenu() {
+  const navbar = document.querySelector(".navbar");
+  const btn = document.querySelector(".nav-toggle");
 
-links.forEach((link) => {
-    link.addEventListener("click", () => {
-        nav.classList.remove("active");
+  btn.addEventListener("click", (e) => {
+    navbar.classList.toggle("active");
+    console.log(btn);
+  });
+
+  const links = document.querySelectorAll(".navbar a");
+  links.forEach(link => {
+    link.addEventListener("click", (e) => {
+      navbar.classList.remove("active");
     });
-    
-});
+  })
+ 
+}
+ console.log( toggleMenu);
+toggleMenu();
